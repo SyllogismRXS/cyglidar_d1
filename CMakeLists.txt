@@ -46,6 +46,7 @@ ament_target_dependencies(cyglidar_d1_publisher
     sensor_msgs
     Boost
     PCL
+    pcl_conversions
 )
 
 install(TARGETS cyglidar_d1_publisher

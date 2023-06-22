@@ -23,13 +23,13 @@ namespace D1
 
     void CygLiDAR_D1::initParam()
     {
-        this->declare_parameter("port");
-        this->declare_parameter("baud_rate");
-        this->declare_parameter("frame_id");
-        this->declare_parameter("run_mode");
-        this->declare_parameter("duration_mode");
-        this->declare_parameter("duration_value");
-        this->declare_parameter("frequency_channel");
+        this->declare_parameter("port", "/dev/ttyUSB0");
+        this->declare_parameter("baud_rate", 3000000);
+        this->declare_parameter("frame_id", "laser_frame");
+        this->declare_parameter("run_mode", 2);
+        this->declare_parameter("duration_mode", PULSE_AUTO);
+        this->declare_parameter("duration_value", 10000);
+        this->declare_parameter("frequency_channel", 0);
 
         this->get_parameter_or<std::string>("port", port, "/dev/ttyUSB0");
         this->get_parameter_or<int>("baud_rate", baud_rate, 3000000);
